@@ -1,0 +1,19 @@
+###ansible-playbook -i ec2.py setup-nginx.yaml   --private-key /root/.ssh/key.pem 
+
+---
+- hosts: tag_app_web_node
+  remote_user: ec2-user
+  tasks:
+    - name: ensure nginx is at the latest version
+      shell: sudo amazon-linux-extras install nginx1
+      become: yes
+    - name: copy the nginx config file and restart nginx
+      copy:
+        src: nginx.conf
+        dest: /etc/nginx/nginx.conf
+      become: yes
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted
+      become: yes

@@ -1,0 +1,21 @@
+[Unit]
+Description=go-app service
+ConditionPathExists=/opt/go-app
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+LimitNOFILE=2048
+
+Restart=on-failure
+RestartSec=10
+
+WorkingDirectory=/opt/go-app
+ExecStart=/usr/local/go/bin/go run main.go
+ExecStop=/usr/bin/ps aux | grep -i go | awk {'print $2'} | xargs kill -9
+
+
+[Install]
+WantedBy=multi-user.target

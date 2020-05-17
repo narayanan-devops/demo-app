@@ -1,0 +1,6 @@
+-  hosts: tag_app_app_node 
+   become: true
+   gather_facts: no
+   remote_user: ec2-user
+   roles:
+    - ansible-app-setup
