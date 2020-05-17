@@ -2,4 +2,4 @@
 demo-app
 
 
-[![asciicast](https://asciinema.org/a/onZWCW6DZVmoERruba6ggpfGO.svg)](https://asciinema.org/a/onZWCW6DZVmoERruba6ggpfGO)
+[![asciicast](https://asciinema.org/a/onZWCW6DZVmoERruba6ggpfGO.svg)](https://asciinema.org/a/onZWCW6DZVmoERruba6ggpfGO?&speed=4)
